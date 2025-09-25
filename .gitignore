@@ -1,0 +1,54 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.so
+*.egg
+*.egg-info/
+dist/
+build/
+.eggs/
+
+# Virtual environment
+.venv/
+venv/
+ENV/
+env/
+
+# IDEs & Editors
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Logs & caches
+*.log
+*.tmp
+*.out
+*.pid
+*.gz
+*.coverage
+htmlcov/
+.cache/
+.mypy_cache/
+.pytest_cache/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Environment & config
+.env
+.env.*.local
+*.local
+
+# GCP / Service Account Keys
+*.json
+
+# Docker
+*.tar
+*.bak
+
+# Misc
+node_modules/
