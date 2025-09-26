@@ -86,7 +86,7 @@ curl -s -X POST "$API/ocr/plus/image" -F "file=@samples/test.jpg"
 # Expect: second response has "cache_hit": true and usually lower processing_time_ms
 ```
 
-## 9) Batch Processing (if available)
+## 9) Batch Processing 
 ```bash
 curl -s -X POST "$API/ocr/simple/batch" \
   -F "files=@samples/test.jpg" \
