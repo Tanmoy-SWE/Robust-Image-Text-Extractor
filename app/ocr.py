@@ -1,6 +1,9 @@
 from google.cloud import vision
 from typing import List, Optional
 from .schemas import OCRResponse, OCRBlock
+from typing import Optional, List
+from .schemas import OCRBlock
+
 
 def _vertices_to_bbox(vertices) -> List[List[float]]:
     # returns list of 4 points (x,y), normalizing to pixel ints if present
@@ -115,3 +118,8 @@ def run_ocr_gcs(
             )
         )
     return OCRResponse(text=text, language=None, blocks=blocks)
+
+
+def average_confidence(blocks: List[OCRBlock]) -> Optional[float]:
+    vals = [b.confidence for b in blocks if b.confidence is not None]
+    return float(sum(vals)/len(vals)) if vals else None
