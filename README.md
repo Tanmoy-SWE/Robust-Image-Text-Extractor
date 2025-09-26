@@ -19,6 +19,7 @@ It accepts JPG/JPEG image files, validates input (file size and type), performs 
 - Validation: only `.jpg`/`.jpeg`, max 10 MB
 - Proper error handling (missing file, wrong format, oversized file)
 - JSON responses with success flag, confidence score, and processing time
+- Handles **various image qualities and text orientations** automatically (leveraging Google Cloud Vision)
 - Deployed to Cloud Run (serverless, auto-scalable)
 
 ---
