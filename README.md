@@ -2,7 +2,11 @@
 
 🌐 **Live API URL:** [https://fastapi-ocr-735947868321.asia-south1.run.app](https://fastapi-ocr-735947868321.asia-south1.run.app)
 
-👉 You will also find a sample **curl command** below to test the OCR API quickly.
+
+## 🧪 Full Test Scenarios
+
+For complete manual test cases (all validation, error handling, caching, batch processing, rate limiting, etc.),  
+see [**docs/TESTS.md**](docs/TESTS.md).
 
 ---
 

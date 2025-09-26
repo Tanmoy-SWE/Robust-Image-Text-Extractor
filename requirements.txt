@@ -4,3 +4,4 @@ python-multipart==0.0.9
 pydantic==2.9.2
 google-cloud-vision==3.7.4
 google-cloud-storage==2.18.2
+Pillow==10.4.0

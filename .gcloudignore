@@ -1,0 +1,30 @@
+# .gcloudignore
+
+# Keep these included
+!Dockerfile
+!requirements.txt
+!app/**
+!app
+
+# Ignore common junk/secrets
+.git/
+.git/**/*
+
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.venv/
+venv/
+ENV/
+env/
+
+*.log
+*.tmp
+
+.env
+*.env
+*.local
+
+# Ignore service account upload keys; rely on Cloud Run service account
+*.json
