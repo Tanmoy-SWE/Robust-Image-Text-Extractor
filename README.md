@@ -1,5 +1,11 @@
 # OCR Image Text Extractor (FastAPI + Google Cloud Vision + Cloud Run)
 
+🌐 **Live API URL:** [https://fastapi-ocr-735947868321.asia-south1.run.app](https://fastapi-ocr-735947868321.asia-south1.run.app)
+
+👉 You will also find a sample **curl command** below to test the OCR API quickly.
+
+---
+
 ## 📌 Overview
 This project is a serverless API that extracts text from uploaded images using **Google Cloud Vision OCR** and runs on **Google Cloud Run**.
 
