@@ -13,18 +13,27 @@ see [**docs/TESTS.md**](docs/TESTS.md).
 ## 📌 Overview
 This project is a serverless API that extracts text from uploaded images using **Google Cloud Vision OCR** and runs on **Google Cloud Run**.
 
-It accepts JPG/JPEG image files, validates input (file size and type), performs OCR, and returns the extracted text in a structured JSON response.
+It accepts JPG/JPEG/PNG/GIF image files, validates input (file size and type), performs OCR, and returns the extracted text in a structured JSON response.
 
 ---
 
 ## ⚙️ Features
-- Accepts JPG/JPEG uploads via `multipart/form-data`
+- Accepts JPG/JPEG/PNG/GIF uploads via `multipart/form-data`
 - Extracts text using Google Cloud Vision API
-- Validation: only `.jpg`/`.jpeg`, max 10 MB
+- Validation: only allowed formats, max 10 MB
 - Proper error handling (missing file, wrong format, oversized file)
 - JSON responses with success flag, confidence score, and processing time
 - Handles **various image qualities and text orientations** automatically (leveraging Google Cloud Vision)
 - Deployed to Cloud Run (serverless, auto-scalable)
+
+### 🔥 Bonus Features
+- Confidence scores for extracted text
+- Text preprocessing (cleanup, formatting)
+- Rate limiting to prevent abuse
+- Caching for identical images (fast repeated queries)
+- Batch processing endpoint (multi-image OCR in one call)
+- Image metadata extraction (format, dimensions, EXIF when available)
+
 
 ---
 
@@ -49,7 +58,7 @@ POST /ocr/simple/image
 ```
 
 **Input**
-- `file` (form-data, JPG/JPEG only, max 10 MB)
+- `file` (form-data, JPG/JPEG/PNG/GIF only, max 10 MB)
 - Optional query params:
   - `language_hints`: e.g. `en`, `bn`
   - `use_document_ocr`: boolean, default `true`
@@ -144,10 +153,13 @@ gcloud run deploy fastapi-ocr \
 
 ## 📂 Repo Contents
 - `app/` → FastAPI code (`main.py`, `ocr.py`, `schemas.py`, `utils.py`)
+- `samples/` → sample JPG images for testing
 - `requirements.txt` → dependencies
 - `Dockerfile` → container definition
 - `.gitignore` → ignores `.env`, service account JSONs, venvs
+- `.gcloudignore` → controls files uploaded to Cloud Build
 - `README.md` → this file
+- `.gcloudignore` → controls files uploaded to Cloud Build
 
 
 ✨ Enjoy the serverless OCR API running in Google Cloud!
