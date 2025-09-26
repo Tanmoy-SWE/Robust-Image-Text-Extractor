@@ -61,9 +61,9 @@ POST /ocr/simple/image
 
 ---
 
-### Example `curl`
+### Example `curl` Request
 ```bash
-curl -X POST "https://YOUR_CLOUD_RUN_URL/ocr/simple/image?use_document_ocr=true&language_hints=en"   -F "file=@test_image.jpg"
+curl -X POST "https://fastapi-ocr-735947868321.asia-south1.run.app/ocr/simple/image"   -F "file=@test_image.jpg"
 ```
 
 ---
@@ -138,12 +138,5 @@ gcloud run deploy fastapi-ocr \
 - `.gitignore` → ignores `.env`, service account JSONs, venvs
 - `README.md` → this file
 
----
 
-## 🔒 Security Notes
-- Never commit `.env` or service account JSON
-- Use **Workload Identity** in Cloud Run instead of raw key files for production
-
----
-
-✨ You now have a serverless OCR API running in Google Cloud!
+✨ Enjoy the serverless OCR API running in Google Cloud!
